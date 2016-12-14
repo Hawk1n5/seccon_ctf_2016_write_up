@@ -34,7 +34,9 @@ My class is up to 30 people :)
 
 - Add student : if student > 30 then call longjmp
     - when add a student it will do this
+
       [0x400893] malloc(48) (memo)    = 0x6031e0
+
       [0x4008b1] malloc(32) (name)    = 0x603220
 - Write student name
 - Write student memo
