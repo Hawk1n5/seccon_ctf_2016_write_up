@@ -54,7 +54,7 @@ My class is up to 30 people :)
 - Show memo
 - exit
 
-because this binary have Full RELRO so can't do got hajack.
+because this binary have Full RELRO so can't do got hijack.
 
 but it have a function setjmp. it set some register info in heap
 
